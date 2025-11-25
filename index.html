@@ -28,11 +28,11 @@
             background: var(--light);
         }
         
-        /* 導航區 */
+        /* 導航區 - 手機優先 */
         .nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            padding: 0.75rem 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -48,7 +48,7 @@
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
@@ -57,12 +57,13 @@
         .cta-button {
             background: var(--secondary);
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.2s, box-shadow 0.2s;
             display: inline-block;
+            font-size: 0.9rem;
         }
         
         .cta-button:hover {
@@ -70,11 +71,11 @@
             box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
         }
         
-        /* Hero區 */
+        /* Hero區 - 手機優先 */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, #2d5a8a 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -99,68 +100,71 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.3;
         }
         
         .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            line-height: 1.5;
         }
         
         .hero-badges {
             display: flex;
-            gap: 2rem;
+            gap: 0.75rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .badge {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            padding: 1rem 1.5rem;
+            padding: 0.75rem 1rem;
             border-radius: 12px;
             font-weight: 600;
+            font-size: 0.9rem;
         }
         
-        /* 容器 */
+        /* 容器 - 手機優先 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
         }
         
-        /* 區段標題 */
+        /* 區段標題 - 手機優先 */
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
         }
         
         .section-title p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--gray);
         }
         
-        /* 問題卡片 */
+        /* 問題卡片 - 手機優先 */
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .problem-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
             border-left: 4px solid var(--secondary);
@@ -179,20 +183,26 @@
         
         .problem-card h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
         }
         
-        /* 學習階段 */
+        .problem-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* 學習階段 - 手機優先 */
         .stages {
             background: white;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
         }
         
         .stage-card {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 16px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border: 2px solid var(--primary);
             position: relative;
             overflow: hidden;
@@ -212,18 +222,18 @@
             display: inline-block;
             background: var(--primary);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            line-height: 50px;
+            line-height: 45px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
         
         .stage-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
@@ -231,19 +241,20 @@
         .stage-meta {
             color: var(--gray);
             font-style: italic;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
         }
         
         .stage-content {
             display: grid;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
         }
         
         .stage-section h4 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
         }
         
         .stage-section ul {
@@ -255,6 +266,8 @@
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         .stage-section li::before {
@@ -268,31 +281,37 @@
         .stage-outcome {
             background: rgba(16, 185, 129, 0.1);
             border-left: 4px solid var(--accent);
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-radius: 8px;
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
         }
         
         .stage-outcome h4 {
             color: var(--accent);
             margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .stage-outcome p {
+            font-size: 0.95rem;
         }
         
         .student-quote {
             background: white;
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-radius: 8px;
             margin-top: 1rem;
             font-style: italic;
             color: var(--gray);
             border-left: 3px solid var(--secondary);
+            font-size: 0.9rem;
         }
         
-        /* 學習地圖 */
+        /* 學習地圖 - 手機優先 */
         .learning-timeline {
             background: var(--primary);
             color: white;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
         }
         
         .timeline-container {
@@ -302,44 +321,44 @@
         
         .timeline-item {
             display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
         
         .timeline-month {
             background: var(--secondary);
-            padding: 1rem 2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 12px;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            min-width: 150px;
             text-align: center;
         }
         
         .timeline-content {
-            flex: 1;
             background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            font-size: 0.95rem;
         }
         
-        /* 教學方式 */
+        /* 教學方式 - 手機優先 */
         .teaching-method {
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
             background: white;
         }
         
         .comparison {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         
         .comparison-card {
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             border: 2px solid;
         }
@@ -356,7 +375,7 @@
         
         .comparison-card h3 {
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         
         .comparison-card.bad h3 {
@@ -367,18 +386,28 @@
             color: var(--success);
         }
         
+        .comparison-card ul li {
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+        
         .daily-flow {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             margin: 2rem 0;
         }
         
+        .daily-flow h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
         .flow-step {
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1.25rem 0;
             padding: 1rem;
             background: white;
             border-radius: 8px;
@@ -391,16 +420,25 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: 600;
-            min-width: 140px;
             text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .flow-step > div:last-child {
+            font-size: 0.95rem;
         }
         
         .example-box {
             background: white;
             border: 2px solid var(--secondary);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             margin: 2rem 0;
+        }
+        
+        .example-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
         
         .example-submission {
@@ -408,6 +446,7 @@
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
+            font-size: 0.9rem;
         }
         
         .example-feedback {
@@ -415,50 +454,58 @@
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
+            font-size: 0.9rem;
         }
         
-        /* 成功案例 */
+        .example-feedback ol {
+            margin: 0.5rem 0 0.5rem 1.25rem;
+            font-size: 0.9rem;
+        }
+        
+        /* 成功案例 - 手機優先 */
         .success-stories {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
         }
         
         .story-card {
             background: white;
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 16px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-top: 4px solid var(--secondary);
         }
         
         .story-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            text-align: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
         }
         
         .story-avatar {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
             font-weight: 700;
         }
         
         .story-photo {
-            width: 60%;
-            max-width: 400px;
+            width: 85%;
+            max-width: 350px;
             height: auto;
             object-fit: contain;
             border-radius: 12px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 1.5rem auto;
             display: block;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             border: 1px solid #e2e8f0;
@@ -467,80 +514,71 @@
         .story-info h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .story-info p {
+            font-size: 0.9rem;
         }
         
         .story-meta {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
             margin: 1rem 0;
+            justify-content: center;
         }
         
         .meta-badge {
             background: var(--light);
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--gray);
         }
         
         .story-result {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 1.5rem;
+            padding: 1.25rem;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.25rem 0;
             font-weight: 600;
             color: #92400e;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-align: center;
         }
         
         .story-quote {
             font-style: italic;
             color: var(--gray);
             border-left: 4px solid var(--secondary);
-            padding-left: 1.5rem;
+            padding-left: 1.25rem;
             margin: 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
-        .story-highlight {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px dashed var(--light);
-        }
-        
-        .highlight-item {
-            text-align: center;
-        }
-        
-        .highlight-item strong {
-            display: block;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        /* 價格區 */
+        /* 價格區 - 手機優先 */
         .pricing {
             background: var(--dark);
             color: white;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
+        }
+        
+        .pricing h3 {
+            font-size: 1.3rem;
         }
         
         .pricing-comparison {
             display: grid;
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         
         .pricing-item {
             background: rgba(255,255,255,0.05);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             border-left: 4px solid;
         }
         
@@ -554,20 +592,33 @@
         }
         
         .pricing-details h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .pricing-details p {
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
         .pricing-price {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--secondary);
+            margin-top: 1rem;
+            text-align: center;
         }
         
         .pricing-features {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             margin: 2rem 0;
+        }
+        
+        .pricing-features h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
         }
         
         .pricing-features ul {
@@ -580,6 +631,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-left: 2rem;
             position: relative;
+            font-size: 0.95rem;
         }
         
         .pricing-features li::before {
@@ -593,57 +645,67 @@
         
         .value-calc {
             background: rgba(245, 158, 11, 0.1);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             margin: 2rem 0;
             border: 2px solid var(--secondary);
         }
         
+        .value-calc h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+        }
+        
         .calc-row {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 0.5rem;
             padding: 1rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
         
         .calc-row:last-child {
             border-bottom: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--secondary);
+            text-align: center;
         }
         
-        /* FAQ */
+        /* FAQ - 手機優先 */
         .faq {
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
             background: white;
         }
         
         .faq-item {
             background: var(--light);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             border-left: 4px solid var(--primary);
         }
         
         .faq-question {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
         }
         
         .faq-answer {
             color: var(--gray);
-            line-height: 1.8;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
-        /* 報名區 */
+        /* 報名區 - 手機優先 */
         .signup {
             background: linear-gradient(135deg, var(--secondary) 0%, #ea580c 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 2.5rem 1.25rem;
             text-align: center;
         }
         
@@ -653,49 +715,61 @@
         }
         
         .signup h2 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
         
         .signup-price {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
         
         .signup-price small {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+            display: block;
+            margin-top: 0.5rem;
         }
         
         .signup-steps {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             text-align: left;
         }
         
+        .signup-steps h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
         .signup-steps ol {
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
         
         .signup-steps li {
             padding: 0.5rem 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
+        }
+        
+        .signup-steps p {
+            font-size: 0.9rem;
         }
         
         .cta-large {
             background: white;
             color: var(--secondary);
-            padding: 1.5rem 3rem;
+            padding: 1.25rem 2.5rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             display: inline-block;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         
@@ -704,40 +778,417 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         
-        /* Footer */
+        /* Footer - 手機優先 */
         .footer {
             background: var(--dark);
             color: white;
-            padding: 2rem;
+            padding: 2rem 1.25rem;
             text-align: center;
         }
         
-        /* 響應式設計 */
-        @media (max-width: 768px) {
+        .footer p {
+            font-size: 0.9rem;
+        }
+        
+        /* 共用樣式優化 */
+        .common-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .common-box h3 {
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .common-box-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .common-box-grid div {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .common-box p {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        /* 平板和桌面優化 (768px 以上) */
+        @media (min-width: 768px) {
+            .nav {
+                padding: 1rem 2rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .hero {
+                padding: 4rem 2rem;
+            }
+            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
             
             .hero .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
-            .comparison {
-                grid-template-columns: 1fr;
+            .badge {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
             }
             
-            .timeline-item {
-                flex-direction: column;
-                text-align: center;
+            .container {
+                padding: 4rem 2rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+            
+            .section-title p {
+                font-size: 1.2rem;
+            }
+            
+            .problem-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+            
+            .problem-card {
+                padding: 2rem;
+            }
+            
+            .problem-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .problem-card p {
+                font-size: 1rem;
+            }
+            
+            .stages {
+                padding: 4rem 2rem;
+            }
+            
+            .stage-card {
+                padding: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .stage-number {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .stage-card h3 {
+                font-size: 1.8rem;
+            }
+            
+            .stage-meta {
+                font-size: 1rem;
+            }
+            
+            .stage-section h4 {
+                font-size: 1.2rem;
+            }
+            
+            .stage-section li {
+                font-size: 1rem;
+            }
+            
+            .timeline-item {
+                flex-direction: row;
+                text-align: left;
+                gap: 2rem;
+            }
+            
+            .timeline-month {
+                min-width: 150px;
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+            }
+            
+            .timeline-content {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .teaching-method {
+                padding: 4rem 2rem;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .comparison-card {
+                padding: 2rem;
+            }
+            
+            .comparison-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .comparison-card ul li {
+                font-size: 1rem;
+            }
+            
+            .daily-flow {
+                padding: 2rem;
+            }
+            
+            .flow-step {
+                flex-direction: row;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .flow-time {
+                min-width: 140px;
+                font-size: 1rem;
+            }
+            
+            .flow-step > div:last-child {
+                font-size: 1rem;
+            }
+            
+            .example-box {
+                padding: 2rem;
+            }
+            
+            .example-box h3 {
+                font-size: 1.3rem;
+            }
+            
+            .example-submission,
+            .example-feedback {
+                font-size: 1rem;
+            }
+            
+            .success-stories {
+                padding: 4rem 2rem;
+            }
+            
+            .story-card {
+                padding: 2.5rem;
+                margin-bottom: 2rem;
             }
             
             .story-header {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .story-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .story-photo {
+                width: 60%;
+                max-width: 400px;
+            }
+            
+            .story-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .story-info p {
+                font-size: 1rem;
+            }
+            
+            .story-meta {
+                justify-content: flex-start;
+            }
+            
+            .meta-badge {
+                font-size: 0.9rem;
+            }
+            
+            .story-result {
+                font-size: 1.1rem;
+                text-align: left;
+            }
+            
+            .story-quote {
+                font-size: 1rem;
+            }
+            
+            .pricing {
+                padding: 4rem 2rem;
+            }
+            
+            .pricing h3 {
+                font-size: 1.5rem;
+            }
+            
+            .pricing-comparison {
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .pricing-item {
+                padding: 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .pricing-details h3 {
+                font-size: 1.3rem;
+            }
+            
+            .pricing-details p {
+                font-size: 1rem;
+            }
+            
+            .pricing-price {
+                font-size: 1.5rem;
+                margin-top: 0;
+            }
+            
+            .pricing-features {
+                padding: 2rem;
+            }
+            
+            .pricing-features h3 {
+                font-size: 1.3rem;
+            }
+            
+            .pricing-features li {
+                font-size: 1rem;
+            }
+            
+            .value-calc {
+                padding: 2rem;
+            }
+            
+            .value-calc h3 {
+                font-size: 1.3rem;
+            }
+            
+            .calc-row {
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 1rem;
+            }
+            
+            .calc-row:last-child {
+                font-size: 1.2rem;
+            }
+            
+            .faq {
+                padding: 4rem 2rem;
+            }
+            
+            .faq-item {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .faq-question {
+                font-size: 1.3rem;
+            }
+            
+            .faq-answer {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+            
+            .signup {
+                padding: 4rem 2rem;
+            }
+            
+            .signup h2 {
+                font-size: 2.5rem;
+            }
+            
+            .signup-price {
+                font-size: 3rem;
+                margin: 2rem 0;
+            }
+            
+            .signup-price small {
+                font-size: 1.5rem;
+                display: inline;
+                margin-top: 0;
+            }
+            
+            .signup-steps {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .signup-steps h3 {
+                font-size: 1.3rem;
+            }
+            
+            .signup-steps li {
+                font-size: 1.2rem;
+            }
+            
+            .signup-steps p {
+                font-size: 1rem;
+            }
+            
+            .cta-large {
+                padding: 1.5rem 3rem;
+                font-size: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .footer {
+                padding: 2rem;
+            }
+            
+            .footer p {
+                font-size: 1rem;
+            }
+            
+            .common-box {
+                padding: 2.5rem;
+            }
+            
+            .common-box h3 {
+                font-size: 1.4rem;
+            }
+            
+            .common-box-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .common-box-grid div {
+                font-size: 1rem;
+            }
+            
+            .common-box p {
+                font-size: 1.2rem;
             }
         }
         
@@ -772,7 +1223,7 @@
         <div class="hero-content">
             <h1>加密貨幣與美股陪跑課</h1>
             <p class="subtitle">專為「想從市場獲利」的人量身定制<br>手把手實戰型課程</p>
-            <p style="font-size: 1.3rem; margin: 2rem 0;">學會不盯盤波段交易 | 打造穩定收入來源</p>
+            <p style="font-size: 1.05rem; margin: 1.5rem 0;">學會不盯盤波段交易<br>打造穩定收入來源</p>
             <div class="hero-badges">
                 <div class="badge">✅ 一對一專屬教學</div>
                 <div class="badge">✅ 終身學習保證</div>
@@ -837,7 +1288,7 @@
                 <div class="timeline-month">第 6 個月</div>
                 <div class="timeline-content">實戰驗證,準備真金投入</div>
             </div>
-            <div style="text-align: center; margin-top: 3rem; font-style: italic; font-size: 1.2rem;">
+            <div style="text-align: center; margin-top: 2rem; font-style: italic; font-size: 1rem;">
                 💬 學員真實回饋:"第 1 個月我還很懵,第 3 個月開始有感覺,第 5 個月我已經可以獨立判斷了!"
             </div>
         </div>
@@ -983,9 +1434,9 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px;">
-                <h3 style="color: #92400e; margin-bottom: 1rem;">🎓 課程結束後:終身免費複訓與指導</h3>
-                <ul style="list-style: none; padding: 0; color: #92400e;">
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px;">
+                <h3 style="color: #92400e; margin-bottom: 1rem; font-size: 1.2rem;">🎓 課程結束後:終身免費複訓與指導</h3>
+                <ul style="list-style: none; padding: 0; color: #92400e; font-size: 0.95rem;">
                     <li>✓ 遇到問題隨時問,老師終身解答</li>
                     <li>✓ 每週複習直播,持續精進技巧</li>
                     <li>✓ 市場有新變化,老師會主動分享應對策略</li>
@@ -1025,7 +1476,7 @@
             </div>
 
             <div class="daily-flow">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">📅 每天的學習流程</h3>
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">📅 每天的學習流程</h3>
                 
                 <div class="flow-step">
                     <div class="flow-time">22:00-23:00</div>
@@ -1049,8 +1500,8 @@
             </div>
 
             <div class="example-box">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">📸 實際批改範例</h3>
-                <p style="margin-bottom: 1rem; color: var(--gray);">💡 這裡建議放入你的學員作業批改截圖</p>
+                <h3 style="color: var(--primary); margin-bottom: 1.25rem;">📸 實際批改範例</h3>
+                <p style="margin-bottom: 1rem; color: var(--gray); font-size: 0.9rem;">💡 這裡建議放入你的學員作業批改截圖</p>
                 
                 <div class="example-submission">
                     <strong>學員繳交:</strong>
@@ -1069,22 +1520,22 @@
                 </div>
             </div>
 
-            <div style="background: var(--light); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">💬 學員真實回饋</h3>
-                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
-                    <p style="font-style: italic; color: var(--gray);">"每次繳作業都被老師抓出盲點,剛開始有點挫折,但現在回頭看,進步真的超快!如果只是看影片,我根本不知道自己錯在哪裡。"</p>
+            <div style="background: var(--light); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">💬 學員真實回饋</h3>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.25rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray); font-size: 0.9rem;">"每次繳作業都被老師抓出盲點,剛開始有點挫折,但現在回頭看,進步真的超快!如果只是看影片,我根本不知道自己錯在哪裡。"</p>
                 </div>
-                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
-                    <p style="font-style: italic; color: var(--gray);">"老師超有耐心,同一個問題問 3 次也不會不耐煩,會用不同方式解釋到我懂為止。"</p>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.25rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray); font-size: 0.9rem;">"老師超有耐心,同一個問題問 3 次也不會不耐煩,會用不同方式解釋到我懂為止。"</p>
                 </div>
-                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
-                    <p style="font-style: italic; color: var(--gray);">"有人批改作業的感覺完全不一樣,以前我自己看書練習,根本不知道對錯,現在有老師即時糾正,學習效率差 10 倍!"</p>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.25rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray); font-size: 0.9rem;">"有人批改作業的感覺完全不一樣,以前我自己看書練習,根本不知道對錯,現在有老師即時糾正,學習效率差 10 倍!"</p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%); border-radius: 12px;">
-                <h3 style="color: #1e40af;">🎯 這就是為什麼我們的學員學得會!</h3>
-                <p style="color: #1e3a8a; margin-top: 1rem;">不是因為他們天賦異稟,而是因為每一個錯誤都被抓出來改正。</p>
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%); border-radius: 12px;">
+                <h3 style="color: #1e40af; font-size: 1.2rem;">🎯 這就是為什麼我們的學員學得會!</h3>
+                <p style="color: #1e3a8a; margin-top: 1rem; font-size: 0.95rem;">不是因為他們天賦異稟,而是因為每一個錯誤都被抓出來改正。</p>
             </div>
         </div>
     </section>
@@ -1169,9 +1620,9 @@
                 </div>
             </div>
 
-            <div style="background: white; padding: 2.5rem; border-radius: 16px; margin-top: 2rem; border: 2px solid var(--primary);">
-                <h3 style="color: var(--primary); margin-bottom: 1.5rem; text-align: center;">📊 他們的共同點</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div class="common-box">
+                <h3>📊 他們的共同點</h3>
+                <div class="common-box-grid">
                     <div>✅ 願意每天穩定繳交作業</div>
                     <div>✅ 遇到問題不逃避,主動提問</div>
                     <div>✅ 跟著老師的節奏一步步學習</div>
@@ -1179,9 +1630,7 @@
                     <div>✅ 願意放下過去錯誤的操作習慣</div>
                     <div>✅ 堅持到底,就算進度慢也不輕易放棄</div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--secondary); font-weight: 600;">
-                    🎯 你也可以!只要願意投入時間練習,老師保證教到你會!
-                </p>
+                <p>🎯 你也可以!只要願意投入時間練習,老師保證教到你會!</p>
             </div>
         </div>
     </section>
@@ -1194,7 +1643,7 @@
                 <p style="color: rgba(255,255,255,0.8);">一次投資,終身受用</p>
             </div>
 
-            <h3 style="color: white; margin: 3rem 0 1.5rem; text-align: center;">📊 市面課程比較</h3>
+            <h3 style="color: white; margin: 2rem 0 1.5rem; text-align: center;">📊 市面課程比較</h3>
             
             <div class="pricing-comparison">
                 <div class="pricing-item bad">
@@ -1226,7 +1675,7 @@
                         <h3>✅ 我們的完整方案</h3>
                         <p style="color: white; font-weight: 600;">包含所有你需要的,而且是終身的!</p>
                     </div>
-                    <div class="pricing-price" style="font-size: 2rem;">60,000 元</div>
+                    <div class="pricing-price" style="font-size: 1.8rem;">60,000 元</div>
                 </div>
             </div>
 
@@ -1251,12 +1700,12 @@
                 
                 <div class="calc-row">
                     <span></span>
-                    <span>每天只要 330 元,比一杯星巴克還便宜</span>
+                    <span>每天只要 330 元</span>
                 </div>
                 
                 <div class="calc-row">
                     <span>如果你未來問問題 3 年:</span>
-                    <span>每月不到 2,000 元的終身顧問費</span>
+                    <span>每月不到 2,000 元</span>
                 </div>
                 
                 <div class="calc-row">
@@ -1270,18 +1719,18 @@
                 </div>
             </div>
 
-            <div style="background: rgba(16, 185, 129, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid var(--accent);">
-                <h3 style="color: var(--accent); margin-bottom: 1rem; text-align: center;">🎯 更重要的是</h3>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border: 2px solid var(--accent);">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; text-align: center; font-size: 1.2rem;">🎯 更重要的是</h3>
                 <div style="text-align: center;">
-                    <p style="font-size: 1.2rem; margin: 1rem 0; color: white;">一次學會,一輩子受用!</p>
-                    <p style="color: rgba(255,255,255,0.9);">再也不用:</p>
-                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9);">
+                    <p style="font-size: 1.1rem; margin: 1rem 0; color: white;">一次學會,一輩子受用!</p>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem;">再也不用:</p>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                         <li>❌ 繳學費給市場(亂買亂賣賠錢)</li>
                         <li>❌ 花錢買別人的報明牌</li>
                         <li>❌ 擔心被市場收割</li>
                     </ul>
-                    <p style="color: white; margin-top: 1.5rem; font-weight: 600;">✅ 你會擁有:</p>
-                    <ul style="list-style: none; padding: 0; color: white;">
+                    <p style="color: white; margin-top: 1.5rem; font-weight: 600; font-size: 0.95rem;">✅ 你會擁有:</p>
+                    <ul style="list-style: none; padding: 0; color: white; font-size: 0.9rem;">
                         <li>✓ 自己判斷進出場的能力</li>
                         <li>✓ 穩定的交易系統</li>
                         <li>✓ 一輩子都能用的投資技能</li>
@@ -1361,16 +1810,16 @@
     <section class="signup" id="signup">
         <div class="signup-content">
             <h2>🚀 開始你的投資學習之旅</h2>
-            <p style="font-size: 1.3rem; margin: 1rem 0;">一次投資,終身指導</p>
+            <p style="font-size: 1.1rem; margin: 1rem 0;">一次投資,終身指導</p>
             
             <div class="signup-price">
-                2,000 美金 <small>(約 60,000 TWD)</small>
+                2,000 美金<small>(約 60,000 TWD)</small>
             </div>
             
-            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; margin: 2rem 0;">
-                <p style="font-size: 1.2rem; font-weight: 600;">🎁 加碼贈送兩大延伸策略</p>
-                <p>• 加密貨幣策略<br>• 美股交易策略</p>
-                <p style="font-size: 1.1rem; margin-top: 1rem;">👉 總價值超過 12 萬元</p>
+            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0;">
+                <p style="font-size: 1.1rem; font-weight: 600;">🎁 加碼贈送兩大延伸策略</p>
+                <p style="font-size: 0.95rem;">• 加密貨幣策略<br>• 美股交易策略</p>
+                <p style="font-size: 1rem; margin-top: 1rem;">👉 總價值超過 12 萬元</p>
             </div>
             
             <div class="signup-steps">
@@ -1380,12 +1829,12 @@
                     <li>安排第一次上課時間</li>
                     <li>開始實戰繳交功課,付課程尾款</li>
                 </ol>
-                <p style="margin-top: 1rem; font-style: italic;">💡 付款訂金時請用美元付款,匯率較佳</p>
+                <p style="margin-top: 1rem; font-style: italic;">💡 付款方式二選一：信用卡 / 轉帳匯款 </p>
             </div>
             
-            <a href="#" class="cta-large">立即私訊報名 →</a>
+            <a href="https://www.instagram.com/ssun._6/" class="cta-large">立即私訊報名 →</a>
             
-            <p style="margin-top: 2rem; font-size: 1.1rem;">若下方 Q&A 閱畢尚有疑問,歡迎私訊詢問</p>
+            <p style="margin-top: 1.5rem; font-size: 1rem;">若 Q&A 閱畢尚有疑問,歡迎私訊詢問</p>
         </div>
     </section>
 
