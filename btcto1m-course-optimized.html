@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密貨幣美股陪跑課 | BTCto1M - 手把手帶你學會投資</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #059669;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* 導航區 */
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Hero區 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d5a8a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10 L90 90 M90 10 L10 90" stroke="rgba(255,255,255,0.03)" stroke-width="2"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        
+        /* 容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* 區段標題 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        /* 問題卡片 */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.2s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+        
+        .problem-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .problem-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 學習階段 */
+        .stages {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .stage-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .stage-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .stage-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stage-meta {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stage-content {
+            display: grid;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stage-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .stage-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .stage-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .stage-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .stage-outcome {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        
+        .stage-outcome h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .student-quote {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--gray);
+            border-left: 3px solid var(--secondary);
+        }
+        
+        /* 學習地圖 */
+        .learning-timeline {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+        
+        .timeline-month {
+            background: var(--secondary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* 教學方式 */
+        .teaching-method {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid;
+        }
+        
+        .comparison-card.bad {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .comparison-card.good {
+            border-color: var(--accent);
+            background: #f0fdf4;
+        }
+        
+        .comparison-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .comparison-card.bad h3 {
+            color: #dc2626;
+        }
+        
+        .comparison-card.good h3 {
+            color: var(--success);
+        }
+        
+        .daily-flow {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .flow-time {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        .example-box {
+            background: white;
+            border: 2px solid var(--secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .example-submission {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .example-feedback {
+            background: #dbeafe;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        /* 成功案例 */
+        .success-stories {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 2rem;
+        }
+        
+        .story-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .story-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .story-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .meta-badge {
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .story-result {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            color: #92400e;
+            font-size: 1.1rem;
+        }
+        
+        .story-quote {
+            font-style: italic;
+            color: var(--gray);
+            border-left: 4px solid var(--secondary);
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .story-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--light);
+        }
+        
+        .highlight-item {
+            text-align: center;
+        }
+        
+        .highlight-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* 價格區 */
+        .pricing {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+        
+        .pricing-comparison {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pricing-item {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid;
+        }
+        
+        .pricing-item.bad {
+            border-left-color: #ef4444;
+        }
+        
+        .pricing-item.our {
+            border-left-color: var(--secondary);
+            background: rgba(245, 158, 11, 0.1);
+        }
+        
+        .pricing-details h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .pricing-features {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pricing-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .value-calc {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--secondary);
+        }
+        
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .calc-row:last-child {
+            border-bottom: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .faq-item {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .faq-question {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        /* 報名區 */
+        .signup {
+            background: linear-gradient(135deg, var(--secondary) 0%, #ea580c 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .signup-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .signup h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .signup-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 2rem 0;
+        }
+        
+        .signup-price small {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .signup-steps {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .signup-steps ol {
+            padding-left: 2rem;
+        }
+        
+        .signup-steps li {
+            padding: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .cta-large {
+            background: white;
+            color: var(--secondary);
+            padding: 1.5rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-large:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .story-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* 動畫 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stage-card, .story-card, .problem-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航 -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="logo">BTCto1M 陪跑課</a>
+            <a href="#signup" class="cta-button">立即報名</a>
+        </div>
+    </nav>
+
+    <!-- Hero區 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>加密貨幣美股陪跑課</h1>
+            <p class="subtitle">專為「想從市場獲利」的人量身定制<br>手把手實戰型課程</p>
+            <p style="font-size: 1.3rem; margin: 2rem 0;">學會不盯盤波段交易 | 打造穩定收入來源</p>
+            <div class="hero-badges">
+                <div class="badge">✅ 一對一專屬教學</div>
+                <div class="badge">✅ 終身學習保證</div>
+                <div class="badge">✅ 200+ 學員見證</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 痛點區 -->
+    <section class="container">
+        <div class="section-title">
+            <h2>你是否有這些困擾?</h2>
+            <p>我們理解你的挑戰,因為我們的學員都經歷過</p>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="icon">📚</div>
+                <h3>資訊太雜,無從下手</h3>
+                <p>想學投資理財,但網路上資訊太多太亂,不知道該從哪裡開始學起,越看越迷惘。</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon">❌</div>
+                <h3>上過課程,還是不會</h3>
+                <p>曾經買過線上課程或參加實體課,看完影片還是不知道怎麼實際操作,學習效果不佳。</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon">📉</div>
+                <h3>自己投資一直賠錢</h3>
+                <p>已經試著自己投資,但總是追高殺低,虧多賺少,想要改善投資績效卻不知道問題在哪。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 學習地圖 -->
+    <section class="learning-timeline">
+        <div class="timeline-container">
+            <div class="section-title">
+                <h2 style="color: white;">📅 你的 6 個月學習地圖</h2>
+                <p style="color: rgba(255,255,255,0.8);">清楚知道每個階段會學到什麼</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 1 個月</div>
+                <div class="timeline-content">看懂 K 線,開始模擬交易</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 2 個月</div>
+                <div class="timeline-content">學會進場訊號,提高勝率</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 3 個月</div>
+                <div class="timeline-content">掌握出場時機,保護獲利</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 4 個月</div>
+                <div class="timeline-content">盤整行情操作,降低虧損</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 5 個月</div>
+                <div class="timeline-content">策略整合,形成自己的系統</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">第 6 個月</div>
+                <div class="timeline-content">實戰驗證,準備真金投入</div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; font-style: italic; font-size: 1.2rem;">
+                💬 學員真實回饋:"第 1 個月我還很懵,第 3 個月開始有感覺,第 5 個月我已經可以獨立判斷了!"
+            </div>
+        </div>
+    </section>
+
+    <!-- 四大核心階段 -->
+    <section class="stages">
+        <div class="container">
+            <div class="section-title">
+                <h2>📚 完整學習路徑:四大核心階段</h2>
+                <p>手把手帶你從零基礎到精通</p>
+            </div>
+
+            <!-- 第1階段 -->
+            <div class="stage-card">
+                <div class="stage-number">1</div>
+                <h3>第1階段:打地基</h3>
+                <div class="stage-meta">學習時間:第 1-8 週</div>
+                
+                <div class="stage-content">
+                    <div class="stage-section">
+                        <h4>🎯 學習目標</h4>
+                        <p>看懂 K 線,建立正確投資心態</p>
+                    </div>
+                    
+                    <div class="stage-section">
+                        <h4>📖 你會學到</h4>
+                        <ul>
+                            <li>K 線基礎解讀:紅綠 K 棒代表什麼?支撐壓力在哪裡?</li>
+                            <li>趨勢判斷技巧:如何分辨上漲、下跌、盤整三種行情</li>
+                            <li>交易心理建設:為什麼 90% 散戶會賠錢?如何避開情緒化交易</li>
+                            <li>模擬盤實戰:每天繳交作業,老師逐筆批改並指出盲點</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-outcome">
+                    <h4>✅ 完成後你能做到</h4>
+                    <p>看懂任何一張 K 線圖,知道現在是什麼趨勢,不再瞎猜進場</p>
+                </div>
+                
+                <div class="student-quote">
+                    💬 學員真實反饋:"第 1 個月我還很懵懂,但每天繳作業被糾正,第 2 個月突然開竅了!"
+                </div>
+            </div>
+
+            <!-- 第2階段 -->
+            <div class="stage-card">
+                <div class="stage-number">2</div>
+                <h3>第2階段:學策略</h3>
+                <div class="stage-meta">學習時間:第 9-16 週</div>
+                
+                <div class="stage-content">
+                    <div class="stage-section">
+                        <h4>🎯 學習目標</h4>
+                        <p>掌握進出場時機,提高勝率</p>
+                    </div>
+                    
+                    <div class="stage-section">
+                        <h4>📖 你會學到</h4>
+                        <ul>
+                            <li>波段進場訊號:什麼時候是好的買點?如何等待最佳時機</li>
+                            <li>風險控管技巧:停損怎麼設?資金分配怎麼做才不會一次虧光</li>
+                            <li>出場策略運用:如何保護獲利?何時該走?何時該抱</li>
+                            <li>錯誤交易檢討:分析你的每一筆虧損,找出改進方向</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-outcome">
+                    <h4>✅ 完成後你能做到</h4>
+                    <p>不再憑感覺進場,知道什麼時候該等、什麼時候該出手</p>
+                </div>
+                
+                <div class="student-quote">
+                    💬 學員真實反饋:"學會停損後,我再也不會把小賠變大賠,心態穩定很多!"
+                </div>
+            </div>
+
+            <!-- 第3階段 -->
+            <div class="stage-card">
+                <div class="stage-number">3</div>
+                <h3>第3階段:練手感</h3>
+                <div class="stage-meta">學習時間:第 17-22 週</div>
+                
+                <div class="stage-content">
+                    <div class="stage-section">
+                        <h4>🎯 學習目標</h4>
+                        <p>適應盤整行情,精準預測目標價</p>
+                    </div>
+                    
+                    <div class="stage-section">
+                        <h4>📖 你會學到</h4>
+                        <ul>
+                            <li>盤整市場操作:橫盤時怎麼辦?如何在震蕩中獲利</li>
+                            <li>目標價預測法:漲到哪裡該出?跌到哪裡該進?有公式可算</li>
+                            <li>技術指標應用:均線、MACD、KD...工具怎麼搭配使用</li>
+                            <li>多市場實戰:同時練習股票、加密貨幣,熟悉不同市場特性</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-outcome">
+                    <h4>✅ 完成後你能做到</h4>
+                    <p>不只會賺趨勢行情,連盤整都能穩定操作,大幅降低虧損機率</p>
+                </div>
+                
+                <div class="student-quote">
+                    💬 學員真實反饋:"以前盤整我就不知道要幹嘛,現在我知道這時候要休息或做短線!"
+                </div>
+            </div>
+
+            <!-- 第4階段 -->
+            <div class="stage-card">
+                <div class="stage-number">4</div>
+                <h3>第4階段:建系統</h3>
+                <div class="stage-meta">學習時間:第 23-26 週</div>
+                
+                <div class="stage-content">
+                    <div class="stage-section">
+                        <h4>🎯 學習目標</h4>
+                        <p>整合成你自己的交易系統,準備實戰</p>
+                    </div>
+                    
+                    <div class="stage-section">
+                        <h4>📖 你會學到</h4>
+                        <ul>
+                            <li>策略整合技巧:把所有學到的方法組合成適合你的 SOP</li>
+                            <li>加碼進階策略:如何在大趨勢中放大獲利?金字塔加碼法</li>
+                            <li>動能交易技巧:抓住爆發性行情,短期快速獲利</li>
+                            <li>實戰心理準備:從模擬金過渡到真金,心態如何調整</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="stage-outcome">
+                    <h4>✅ 完成後你能做到</h4>
+                    <p>擁有一套完整的交易系統,不再依賴別人報明牌,能獨立判斷進出場</p>
+                </div>
+                
+                <div class="student-quote">
+                    💬 學員真實反饋:"完課後我終於有信心用真金操作,因為我知道我在做什麼!"
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px;">
+                <h3 style="color: #92400e; margin-bottom: 1rem;">🎓 課程結束後:終身免費複訓與指導</h3>
+                <ul style="list-style: none; padding: 0; color: #92400e;">
+                    <li>✓ 遇到問題隨時問,老師終身解答</li>
+                    <li>✓ 每週複習直播,持續精進技巧</li>
+                    <li>✓ 市場有新變化,老師會主動分享應對策略</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教學方式 -->
+    <section class="teaching-method">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎓 我們怎麼教?跟其他課程有什麼不同?</h2>
+                <p>一對一手把手教學的真實樣貌</p>
+            </div>
+
+            <div class="comparison">
+                <div class="comparison-card bad">
+                    <h3>❌ 市面上多數課程</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>📹 看預錄影片</li>
+                        <li>👤 自己練習</li>
+                        <li>❓ 不會也沒人管</li>
+                        <li>💸 學費白繳</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card good">
+                    <h3>✅ 我們的一對一教學</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>👨‍🏫 每天批改作業</li>
+                        <li>💬 即時指出問題</li>
+                        <li>📞 每週視訊討論</li>
+                        <li>🎯 保證學到會</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="daily-flow">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">📅 每天的學習流程</h3>
+                
+                <div class="flow-step">
+                    <div class="flow-time">08:00-17:00</div>
+                    <div>你看盤並做模擬交易(不用真金白銀)</div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-time">18:00-22:00</div>
+                    <div>繳交今天的交易截圖 + 進出場理由</div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-time">當天或隔天</div>
+                    <div>老師批改作業,指出問題與盲點</div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-time">每週 1 次</div>
+                    <div>視訊上課,針對你的問題深入討論</div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">📸 實際批改範例</h3>
+                <p style="margin-bottom: 1rem; color: var(--gray);">💡 這裡建議放入你的學員作業批改截圖</p>
+                
+                <div class="example-submission">
+                    <strong>學員繳交:</strong>
+                    <p>"今天我看到股價突破壓力線,所以在 XX 元進場買進"</p>
+                </div>
+                
+                <div class="example-feedback">
+                    <strong>老師批改:</strong>
+                    <p>"❌ 注意!這邊有三個問題:</p>
+                    <ol style="margin-left: 1.5rem;">
+                        <li>量能不足,這很可能是假突破</li>
+                        <li>你進場時間太早,要等收盤確認</li>
+                        <li>大盤今天在跌,你逆勢做多風險很高</li>
+                    </ol>
+                    <p>💡 建議:下次遇到這種情況,先觀察收盤 K 棒是否站穩,並且確認大盤方向。我們下次上課時再詳細討論突破的判斷技巧。"</p>
+                </div>
+            </div>
+
+            <div style="background: var(--light); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">💬 學員真實回饋</h3>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray);">"每次繳作業都被老師抓出盲點,剛開始有點挫折,但現在回頭看,進步真的超快!如果只是看影片,我根本不知道自己錯在哪裡。"</p>
+                </div>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray);">"老師超有耐心,同一個問題問 3 次也不會不耐煩,會用不同方式解釋到我懂為止。"</p>
+                </div>
+                <div style="border-left: 4px solid var(--secondary); padding-left: 1.5rem; margin: 1rem 0;">
+                    <p style="font-style: italic; color: var(--gray);">"有人批改作業的感覺完全不一樣,以前我自己看書練習,根本不知道對錯,現在有老師即時糾正,學習效率差 10 倍!"</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%); border-radius: 12px;">
+                <h3 style="color: #1e40af;">🎯 這就是為什麼我們的學員學得會!</h3>
+                <p style="color: #1e3a8a; margin-top: 1rem;">不是因為他們天賦異稟,而是因為每一個錯誤都被抓出來改正。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>💎 真實學員成功故事</h2>
+                <p>他們都是從零開始,一步步走到今天</p>
+            </div>
+
+            <div class="story-card">
+                <div class="story-header">
+                    <div class="story-avatar">阿古</div>
+                    <div class="story-info">
+                        <h3>數學老師阿古(32 歲)</h3>
+                        <p style="color: var(--gray);">📌 想增加收入,但投資經驗幾乎為零</p>
+                    </div>
+                </div>
+                
+                <div class="story-meta">
+                    <span class="meta-badge">⏱ 學習時長:24 個月</span>
+                    <span class="meta-badge">💼 職業:教師</span>
+                </div>
+                
+                <div class="story-result">
+                    🎯 成果:完課後實戰,單 2 個月投資績效賺到 50 萬台幣
+                </div>
+                
+                <div class="story-quote">
+                    💬 他說:"感謝老師的指導和經驗分享,讓我找到自己的方向。以前我根本不敢想自己能在市場賺錢,現在我有自己的一套系統了!"
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-header">
+                    <div class="story-avatar">修哥</div>
+                    <div class="story-info">
+                        <h3>飲料店老闆修哥(30 歲)</h3>
+                        <p style="color: var(--gray);">📌 想靠交易創造更大收入,但不知道從哪開始</p>
+                    </div>
+                </div>
+                
+                <div class="story-meta">
+                    <span class="meta-badge">⏱ 學習時長:22 個月</span>
+                    <span class="meta-badge">💼 職業:自營商</span>
+                </div>
+                
+                <div class="story-result">
+                    🎯 成果:通過專業交易員考試,獲得 150 萬元交易資金
+                </div>
+                
+                <div class="story-quote">
+                    💬 他說:"感謝同學們一路的關心陪伴,也非常謝謝老師。從零基礎到考上交易員,這條路真的不容易,但有老師帶真的差很多!"
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-header">
+                    <div class="story-avatar">小雅</div>
+                    <div class="story-info">
+                        <h3>上班族小雅(28 歲)</h3>
+                        <p style="color: var(--gray);">📌 完全小白,連財報都看不懂</p>
+                    </div>
+                </div>
+                
+                <div class="story-meta">
+                    <span class="meta-badge">⏱ 學習時長:12 個月</span>
+                    <span class="meta-badge">💼 職業:上班族</span>
+                </div>
+                
+                <div class="story-result">
+                    🎯 成果:半年投資獲利 20%,終於開始穩定賺錢
+                </div>
+                
+                <div class="story-quote">
+                    💬 她說:"我是超菜小白,感謝老師從指導看財報、進出場判斷、產業選股讓我更清楚如何學起。以前我看到一堆數字就頭痛,現在我知道怎麼選股了!"
+                </div>
+            </div>
+
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; margin-top: 2rem; border: 2px solid var(--primary);">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem; text-align: center;">📊 他們的共同點</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>✅ 願意每天穩定繳交作業</div>
+                    <div>✅ 遇到問題不逃避,主動提問</div>
+                    <div>✅ 跟著老師的節奏一步步學習</div>
+                    <div>✅ 完課後繼續參加複習直播</div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem; color: var(--secondary); font-weight: 600;">
+                    🎯 你也可以!只要願意投入時間練習,老師保證教到你會!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 價格區 -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">💰 投資報酬率分析</h2>
+                <p style="color: rgba(255,255,255,0.8);">一次投資,終身受用</p>
+            </div>
+
+            <h3 style="color: white; margin: 3rem 0 1.5rem; text-align: center;">📊 市面課程比較</h3>
+            
+            <div class="pricing-comparison">
+                <div class="pricing-item bad">
+                    <div class="pricing-details">
+                        <h3>線上錄播課程</h3>
+                        <p>❌ 看影片學不會,遇到問題沒人問<br>❌ 內容太制式,無法針對你的狀況調整</p>
+                    </div>
+                    <div class="pricing-price">3,000-10,000 元</div>
+                </div>
+                
+                <div class="pricing-item bad">
+                    <div class="pricing-details">
+                        <h3>實體大班課程</h3>
+                        <p>❌ 一個老師教 30-50 人,根本顧不到你<br>❌ 下課後就沒了,不會有人管你的作業</p>
+                    </div>
+                    <div class="pricing-price">30,000-50,000 元</div>
+                </div>
+                
+                <div class="pricing-item bad">
+                    <div class="pricing-details">
+                        <h3>其他一對一課程</h3>
+                        <p>❌ 教完就結束,之後有問題要另外付費<br>❌ 沒有長期追蹤,學完還是不敢實戰</p>
+                    </div>
+                    <div class="pricing-price">100,000-150,000 元</div>
+                </div>
+                
+                <div class="pricing-item our">
+                    <div class="pricing-details">
+                        <h3>✅ 我們的完整方案</h3>
+                        <p style="color: white; font-weight: 600;">包含所有你需要的,而且是終身的!</p>
+                    </div>
+                    <div class="pricing-price" style="font-size: 2rem;">60,000 元</div>
+                </div>
+            </div>
+
+            <div class="pricing-features">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">✨ 完整方案包含</h3>
+                <ul>
+                    <li>一對一客製化教學(不是制式課程)</li>
+                    <li>終身指導不限次數(永遠可以問問題)</li>
+                    <li>每天批改作業到會為止(手把手帶你練)</li>
+                    <li>每週複習直播持續精進(已持續 5 年)</li>
+                    <li>額外贈送:加密貨幣策略 + 美股策略(價值 12 萬)</li>
+                </ul>
+            </div>
+
+            <div class="value-calc">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">💡 換算下來有多划算?</h3>
+                
+                <div class="calc-row">
+                    <span>如果你學習 6 個月:</span>
+                    <span>每月 1 萬元的家教費</span>
+                </div>
+                
+                <div class="calc-row">
+                    <span></span>
+                    <span>每天只要 330 元,比一杯星巴克還便宜</span>
+                </div>
+                
+                <div class="calc-row">
+                    <span>如果你未來問問題 3 年:</span>
+                    <span>每月不到 2,000 元的終身顧問費</span>
+                </div>
+                
+                <div class="calc-row">
+                    <span>如果你學會後每年賺 10%:</span>
+                    <span>60 萬本金,1 年就回本</span>
+                </div>
+                
+                <div class="calc-row">
+                    <span>之後呢?</span>
+                    <span>每年都是純賺 💰</span>
+                </div>
+            </div>
+
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid var(--accent);">
+                <h3 style="color: var(--accent); margin-bottom: 1rem; text-align: center;">🎯 更重要的是</h3>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.2rem; margin: 1rem 0; color: white;">一次學會,一輩子受用!</p>
+                    <p style="color: rgba(255,255,255,0.9);">再也不用:</p>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9);">
+                        <li>❌ 繳學費給市場(亂買亂賣賠錢)</li>
+                        <li>❌ 花錢買別人的報明牌</li>
+                        <li>❌ 擔心被市場收割</li>
+                    </ul>
+                    <p style="color: white; margin-top: 1.5rem; font-weight: 600;">✅ 你會擁有:</p>
+                    <ul style="list-style: none; padding: 0; color: white;">
+                        <li>✓ 自己判斷進出場的能力</li>
+                        <li>✓ 穩定的交易系統</li>
+                        <li>✓ 一輩子都能用的投資技能</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>❓ 常見問題 FAQ</h2>
+                <p>解答你的所有疑慮</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q1｜上課時需要準備多少資金?</div>
+                <div class="faq-answer">
+                    課程期間無需使用真實資金,學員將使用模擬金進行操作。這樣的設計是為了讓您在學習階段不必承擔不必要的風險,避免還沒學會就先繳學費給市場。等課程結束、策略熟練後,再進入實戰操作,讓每一分資金都用在刀口上。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q2｜那模擬金的實戰結果真的準嗎?</div>
+                <div class="faq-answer">
+                    是的,雖然操作的是模擬金,但所依據的市場行情是真實的。就像自己平常用真實報價紙上演練一樣,我們透過一套電腦系統來紀錄每一次進出場,省去手動記錄的麻煩,同時更貼近實際操作的節奏與邏輯。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q3｜課程期間大約多久?</div>
+                <div class="faq-answer">
+                    根據實際教學經驗,大多數學員若每天穩定繳交功課與練習,約在六個月內可完整學會並開始進行實戰操作。當然,進度會因人而異,若中途中斷或練習不夠扎實,學習時間也可能延長。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q4｜六個月會不會太久?</div>
+                <div class="faq-answer">
+                    其實,六個月是相當有效率的節奏。許多人靠自學摸索,可能花了好幾年依然賠多賺少。我們可以在一天內講完全部內容,但投資不是背知識而已,而是要「做得出來」。這六個月不是拖課,而是手把手帶你真正走過實戰、遇過問題、修正方法。與其速成後踩雷,不如花半年,為未來幾十年的投資打好基礎。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q5｜課程是線上還是實體?時間怎麼安排?</div>
+                <div class="faq-answer">
+                    課程為一對一指導,可依學生喜好選擇線上或實體上課,兩者吸收效果相同。若您居住於南台灣,可直接安排實體上課;而中北部學員,課程前兩階段(觀念建立與操作練習)多數可透過線上順利學習。進入第三階段(策略整合與應用)後,若有個別理解困難,我們會主動安排實體見面指導,確保每位學員都能突破學習瓶頸。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q6｜我完全沒基礎也能參加嗎?</div>
+                <div class="faq-answer">
+                    當然可以!我們在過去五年中,已一對一指導超過 200 位來自各年齡層的學員,從學生到退休人士都有成功案例。只要願意穩定繳交作業、按部就班練習,沒有學不會的學生。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q7｜這堂課和外面的交易課有什麼不同?</div>
+                <div class="faq-answer">
+                    市面多數課程以預錄影片為主,課後由學生自行摸索,學不會還得自己找問題。我們的課程則是每日手把手實戰演練,老師會即時回饋、糾正錯誤、追蹤進度,幫助你真正「做得出來」,而不只是「聽懂而已」。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q8｜我想學加密貨幣,也是報名這堂課嗎?</div>
+                <div class="faq-answer">
+                    是的!我們的課程設計有考慮到這一點,會先從美股教起,再延伸到加密貨幣的應用。你可以這樣理解:加密貨幣裡的「小幣」,就像美股裡的小型股公司。投資這些小公司,風險和難度通常比藍籌股(大公司)高。但如果選得好,報酬潛力也更驚人,有機會打出爆擊!我們會先教你如何看懂藍籌股的底層邏輯,當你學會了這一套邏輯,未來要套用在虛擬貨幣上也完全沒問題!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 報名區 -->
+    <section class="signup" id="signup">
+        <div class="signup-content">
+            <h2>🚀 開始你的投資學習之旅</h2>
+            <p style="font-size: 1.3rem; margin: 1rem 0;">一次投資,終身指導</p>
+            
+            <div class="signup-price">
+                2,000 美金 <small>(約 60,000 TWD)</small>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; margin: 2rem 0;">
+                <p style="font-size: 1.2rem; font-weight: 600;">🎁 加碼贈送兩大延伸策略</p>
+                <p>• 加密貨幣策略<br>• 美股交易策略</p>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">👉 總價值超過 12 萬元</p>
+            </div>
+            
+            <div class="signup-steps">
+                <h3 style="margin-bottom: 1rem;">📩 報名流程</h3>
+                <ol>
+                    <li>付款訂金 $500 美元</li>
+                    <li>安排第一次上課時間</li>
+                    <li>開始實戰繳交功課,付課程尾款</li>
+                </ol>
+                <p style="margin-top: 1rem; font-style: italic;">💡 付款訂金時請用美元付款,匯率較佳</p>
+            </div>
+            
+            <a href="#" class="cta-large">立即私訊報名 →</a>
+            
+            <p style="margin-top: 2rem; font-size: 1.1rem;">若下方 Q&A 閱畢尚有疑問,歡迎私訊詢問</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BTCto1M 陪跑課. 保留所有權利.</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">師傅:黃柏勳 | 助教:孫羽彤</p>
+        </div>
+    </footer>
+
+</body>
+</html>
